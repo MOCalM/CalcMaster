@@ -1,0 +1,15 @@
+function calculate() {
+    const temperature = document.getElementById('temperature').value;
+    const force = document.getElementById('force').value;
+    const voltage = document.getElementById('voltage').value;
+    const current = document.getElementById('current').value;
+
+    let result = '<h3>النتائج:</h3>';
+    if (temperature) result += `<p>درجة الحرارة: ${temperature} °C</p>`;
+    if (force) result += `<p>القوة: ${force} نيوتن</p>`;
+    if (voltage && current) {
+        const power = voltage * current;
+        result += `<p>الطاقة: ${power} واط</p>`;
+    }
+    document.getElementById('result').innerHTML = result || '<p>يرجى إدخال القيم.</p>';
+}
